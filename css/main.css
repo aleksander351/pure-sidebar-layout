@@ -1,0 +1,221 @@
+#layout {
+  padding: 0 0 0 260px;
+  left: 0;
+}
+
+#menu {
+  margin-left: -260px;
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 260px;
+  bottom: 0;
+  z-index: 1000;
+  background: #4c4c4c;
+  overflow-y: auto;
+  -webkit-overflow-scroll: touch;
+}
+
+#menu-logo {
+  height: 150px;
+  background: #fcebbd;
+}
+
+#menu nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu nav ul li {
+  height: 50px;
+  margin-bottom: 1px;
+  background: #5d5d5d;
+}
+
+#menu nav header {
+  padding: 10px;
+}
+
+#menu nav header h1 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#menu-bottom {
+  padding: 16px 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #5d5d5d;
+  color: #fff;
+  font-size: 14px;
+}
+
+#main-menu-container {
+  background: #e1f2fa;
+}
+
+#main-menu-container nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+#main-menu-container nav ul li {
+  min-width: 20px;
+  min-height: 18px;
+  margin: 0 1px 0 0;
+  padding: 15px;
+  float: left;
+  background: #a4d4e8;
+  text-align: center;
+}
+
+.main-menu-title {
+  font-weight: bold;
+}
+
+#main-menu-right {
+  float: right;
+}
+
+#main-menu-right ul li:last-child {
+  margin-right: 0;
+}
+
+#main-container {
+  background: #cfcfcf;
+}
+
+#main-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#main-container ul li {
+  height: 200px;
+  padding: 10px;
+  /*margin-bottom: 1px;*/
+  background: #f4f4f4;
+}
+
+#main-container ul li .main-item {
+  height: 100%;
+  background: #cfcfcf;
+}
+
+/* Add transition to containers so they can push in and out */
+#layout,
+#menu,
+.pure-menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.pure-menu-link {
+    display: none; /* show this only on small screens */
+    top: 0;
+    left: 150px; /* "#menu width" */
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: 6px;
+    padding: 2.1em 1.6em;
+}
+
+    .pure-menu-link:hover,
+    .pure-menu-link:focus {
+        background: #000;
+    }
+
+    .pure-menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .pure-menu-link span,
+    .pure-menu-link span:before,
+    .pure-menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: .2em;
+        /*-webkit-transition: all 0.8s;
+           -moz-transition: all 0.8s;
+            -ms-transition: all 0.8s;
+             -o-transition: all 0.8s;
+                transition: all 0.8s;*/
+    }
+
+        .pure-menu-link span:before,
+        .pure-menu-link span:after {
+            position: absolute;
+            margin-top: -.6em;
+            content: " ";
+        }
+
+        .pure-menu-link span:after {
+            margin-top: .6em;
+        }
+
+    .pure-menu-link.active span {
+        background: transparent;
+    }
+
+        .pure-menu-link.active span:before {
+            -webkit-transform: rotate(45deg) translate(.5em, .4em);
+               -moz-transform: rotate(45deg) translate(.5em, .4em);
+                -ms-transform: rotate(45deg) translate(.5em, .4em);
+                 -o-transform: rotate(45deg) translate(.5em, .4em);
+                    transform: rotate(45deg) translate(.5em, .4em);
+        }
+
+        .pure-menu-link.active span:after {
+            -webkit-transform: rotate(-45deg) translate(.45em, -.35em);
+               -moz-transform: rotate(-45deg) translate(.45em, -.35em);
+                -ms-transform: rotate(-45deg) translate(.45em, -.35em);
+                 -o-transform: rotate(-45deg) translate(.45em, -.35em);
+                    transform: rotate(-45deg) translate(.45em, -.35em);
+        }
+
+@media (max-width: 870px) {
+
+    /* Navigation Push Styles */
+    #layout {
+        position: relative;
+        padding-left: 0px;
+    }
+        #layout.active {
+            position: relative;
+            left: 260px;
+        }
+            #layout.active #menu {
+                left: 260px;
+                width: 260px;
+            }
+
+    #menu {
+        left: 0;
+    }
+
+    #main-menu-left {
+      margin-left: 53px;
+    }
+
+    .pure-menu-link {
+        position: fixed;
+        left: 0;
+        display: block;
+    }
+
+    #layout.active .pure-menu-link {
+        left: 260px;
+    }
+}
